@@ -1,23 +1,29 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="fca">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Profile Edit</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  <ion-item>
+    <ion-label floating>Full Name</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Email ID</ion-label>
+    <ion-input type="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Mobile Number</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+
+  <ion-row>
+<button ion-button color="primary" (click)="getCameraGal()" ><ion-icon name="camera"></ion-icon></button>
+<button ion-button color="primay" (click)="getCameraGal()" ><ion-icon name="albums"></ion-icon></button>
+</ion-row>
+<button ion-button color="fca" (click)="gotoCreateEvent()" full>Create</button>
 </ion-content>

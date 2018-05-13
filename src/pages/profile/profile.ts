@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { ListPage } from '../list/list';
 
 /**
  * Generated class for the ProfilePage page.
@@ -23,8 +23,8 @@ export class ProfilePage {
     console.log('ionViewDidLoad ProfilePage');
   }
 
-  addFcaEvent() {
-  	this.navCtrl.setRoot(HomePage)
+  editProfile() {
+  	this.navCtrl.push(ListPage)
   }
 
 }

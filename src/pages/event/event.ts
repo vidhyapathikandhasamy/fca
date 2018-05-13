@@ -25,21 +25,41 @@ export class EventPage {
     console.log('ionViewDidLoad EventPage');
   }
 
-  getCameraGal() {
-  	const options: CameraOptions = {
-	  quality: 100,
-	  destinationType: this.camera.DestinationType.DATA_URL,
-	  encodingType: this.camera.EncodingType.JPEG,
-	  mediaType: this.camera.MediaType.PICTURE
-	}
+  getCameraGal(data) {
+    if (data == "camera") {
+      const options: CameraOptions = {
+    quality: 100,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE,
+    sourceType: this.camera.PictureSourceType.CAMERA
+  }
 
-	this.camera.getPicture(options).then((imageData) => {
-	 // imageData is either a base64 encoded string or a file URI
-	 // If it's base64:
-	  this.base64Image = 'data:image/jpeg;base64,' + imageData;
-	}, (err) => {
-	 // Handle error
-	});	
+  this.camera.getPicture(options).then((imageData) => {
+   // imageData is either a base64 encoded string or a file URI
+   // If it's base64:
+    this.base64Image = 'data:image/jpeg;base64,' + imageData;
+  }, (err) => {
+   // Handle error
+  }); 
+    }else{
+      const options: CameraOptions = {
+    quality: 100,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE,
+    sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+  }
+
+  this.camera.getPicture(options).then((imageData) => {
+   // imageData is either a base64 encoded string or a file URI
+   // If it's base64:
+    this.base64Image = 'data:image/jpeg;base64,' + imageData;
+  }, (err) => {
+   // Handle error
+  }); 
+    }
+  	
   }
 
   gotoCreateEvent() {
