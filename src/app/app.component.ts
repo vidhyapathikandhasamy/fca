@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -19,7 +19,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public modalCtrl: ModalController) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -46,6 +46,8 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
   addFcaEvent() {
-    this.nav.setRoot(ProfilePage);
+     let modal = this.modalCtrl.create(ProfilePage);
+     modal.present();
+    // this.nav.setRoot(ProfilePage);
   }
 }

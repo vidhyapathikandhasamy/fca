@@ -17,7 +17,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
   templateUrl: 'event.html',
 })
 export class EventPage {
-
+  base64Image:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
   }
 
@@ -36,7 +36,7 @@ export class EventPage {
 	this.camera.getPicture(options).then((imageData) => {
 	 // imageData is either a base64 encoded string or a file URI
 	 // If it's base64:
-	 let base64Image = 'data:image/jpeg;base64,' + imageData;
+	  this.base64Image = 'data:image/jpeg;base64,' + imageData;
 	}, (err) => {
 	 // Handle error
 	});	
