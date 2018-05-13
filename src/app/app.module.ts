@@ -5,6 +5,13 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { LoginPage } from '../pages/login/login';
+import { LogoutPage } from '../pages/logout/logout';
+import { EventPage } from '../pages/event/event';
+import { SignupPage } from '../pages/signup/signup';
+import { ProfilePage } from '../pages/profile/profile';
+import { Camera } from '@ionic-native/camera';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -13,7 +20,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage,
+    LogoutPage,
+    EventPage,
+    SignupPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -23,11 +35,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage,
+    LogoutPage,
+    EventPage,
+    SignupPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

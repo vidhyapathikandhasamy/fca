@@ -1,7 +1,12 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
+  <ion-header >
+    <ion-toolbar color="fca">
+      <ion-title>FCA</ion-title>
+      <ion-buttons end>
+      <button (click)="addFcaEvent()" ion-button icon-only>
+          <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
